@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Supermecado</title>
+    <link rel="icon" href="./lista-de-afazeres.png">
+
+</head>
+<body>
+    <div id="principal">
+        <h1>Lista de Supermercado</h1>
+        <h3>Adicione o nome do ingrediente:</h3>
+        <input type="text" id="produto">
+        <h3>Adicione o setor do produto</h3>
+        <input type="radio" id="radioFruta"> Frutas
+        <input type="radio" id="radioLaticinio"> Laticinio
+        <input type="radio" id="radioCarnes"> Carnes
+        <input type="radio" id="radioDoces"> Doces
+    
+        <div id="lista">
+            <div >
+                <h2>Frutas</h2>
+                <div id="frutas"></div>
+            </div>
+            <div>
+                <h2>Laticínio</h2>
+                <div id="laticinio"></div>
+            </div>
+            <div>
+                <h2>Carnes</h2>
+                <div id="carnes"></div>
+
+            </div>
+            <div>
+                <h2>Doces</h2>
+                <div id="doces"></div>
+            </div>
+        </div>
+
+        <input type="button" value="Limpar tudo" onclick="limpar()" id="clean">
+    </div>
+    
+</body>
+</html>
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+
+    html{
+        font-family: 'Nunito', sans-serif;
+        background-color: #76d69ec7;
+    }
+    #principal{
+        text-align: center;
+        margin-top: 5rem;
+    }
+    h1{
+       color: rgb(143, 7, 255); 
+    }
+    #lista{
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+    }
+    #produto, #clean{
+        border-radius: 1rem;
+    }
+</style>
+<script>
+        //caixa de entrada
+        let nome_prod = document.getElementById('produto')
+
+        //div onde parece a lista
+        let frutas = document.getElementById('frutas')
+        let laticinio = document.getElementById('laticinio')
+        let carnes = document.getElementById('carnes')
+        let doces = document.getElementById('doces')
+
+        //Radio
+        let radioFruta = document.getElementById('radioFruta')
+        let radioLaticionio = document.getElementById('radioLaticinio')
+        let radioCarnes = document.getElementById('radioCarnes')
+        let radioDoces = document.getElementById('radioDoces')
+
+        //Para setor de FRUTAS
+        radioFruta.addEventListener('click', ()=>{
+            //cria o item
+            let li = document.createElement('li');
+            //pega o valor do input
+            li.textContent = nome_prod.value;
+            //adiciona a lista
+            frutas.appendChild(li);
+            //zera o input
+            nome_prod.value = "";
+            //Limpa o radio
+            radioFruta.checked = false;
+        });
+        //Para setor de LATICINIO
+        radioLaticionio.addEventListener('click', ()=>{
+            //cria o item
+            let li = document.createElement('li');
+            //pega o valor do input
+            li.textContent = nome_prod.value;
+            //adiciona a lista
+            laticinio.appendChild(li);
+            //zera o input
+            nome_prod.value = "";
+            //Limpa o radio
+            radioLaticionio.checked = false;
+        });
+        //Para setor de CARNES
+        radioCarnes.addEventListener('click', ()=>{
+            //cria o item
+            let li = document.createElement('li');
+            //pega o valor do input
+            li.textContent = nome_prod.value;
+            //adiciona a lista
+            carnes.appendChild(li);
+            //zera o input
+            nome_prod.value = "";
+            //Limpa o radio
+            radioCarnes.checked = false;
+        });
+        //Para setor de DOCES
+        radioDoces.addEventListener('click', ()=>{
+            //cria o item
+            let li = document.createElement('li');
+            //pega o valor do input
+            li.textContent = nome_prod.value;
+            //adiciona a lista
+            doces.appendChild(li);
+            //zera o input
+            nome_prod.value = "";
+            //Limpa o radio
+            radioDoces.checked = false;
+        });
+        function limpar(){
+            // Limpa lista de frutas
+            while (frutas.firstChild) {
+                frutas.removeChild(frutas.firstChild);
+            }
+            // Limpa lista de laticínios
+            while (laticinio.firstChild) {
+                laticinio.removeChild(laticinio.firstChild);
+            }
+            // Limpa lista de carnes
+            while (carnes.firstChild) {
+                carnes.removeChild(carnes.firstChild);
+            }
+            // Limpa lista de doces
+            while (doces.firstChild) {
+                doces.removeChild(doces.firstChild);
+            }
+        }
+
+</script>
