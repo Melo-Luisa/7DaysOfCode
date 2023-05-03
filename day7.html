@@ -1,0 +1,54 @@
+<h2>Digite o 1º numero</h2>
+<input type="text" id="entrada">
+<h2>Digite o 2º número</h2>
+<input type="text" id="saida">
+
+<h2>Qual operador matemático:</h2>
+<input type="radio" name="mais" id="mais"> +
+<input type="radio" name="menos" id="menos"> -
+<input type="radio" name="multi" id="multiplicacao"> *
+<input type="radio" name="divisao" id="divisao"> /
+
+<h2>Resultado:</h2>
+<div id="result"></div>
+
+
+<script>
+    //inputs
+    let entrada = document.getElementById('entrada')
+    let saida = document.getElementById('saida')
+    //Resultado
+    let results = document.getElementById('result')
+    //operadores
+    let mais = document.getElementById('mais')
+    let menos = document.getElementById('menos')
+    let multi = document.getElementById('multiplicacao')
+    let divisao = document.getElementById('divisao')
+
+    mais.addEventListener('click', ()=>{
+        results.innerHTML = parseInt(entrada.value) + parseInt(saida.value)
+        entrada.value = ''
+        saida.value = ''
+        if(entrada && saida === ''){
+            alert('nenhuma valor')
+        }        
+    })
+    menos.addEventListener('click' ,()=>{
+        results.innerHTML = parseInt(entrada.value) - parseInt(saida.value)
+        entrada.value = ''
+        saida.value = ''
+        
+    })
+    multi.addEventListener('click' ,()=>{
+        results.innerHTML = parseInt(entrada.value) * parseInt(saida.value)
+    
+        entrada.value = ''
+        saida.value = ''
+    })
+    divisao.addEventListener('click' ,()=>{
+        results.innerHTML = parseInt(entrada.value) / parseInt(saida.value)
+        
+        entrada.value = ''
+        saida.value = ''
+    })
+</script>
