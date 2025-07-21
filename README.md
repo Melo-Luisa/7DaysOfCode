@@ -1,5 +1,5 @@
 # 7DaysOfCode
- 7 days of code on JavaScript
+ 7 days of code in JavaScript
 
 Day 1 - Trabalhando com tipos de variaveis</br>
 Day 2 - Interagindo com o usuário</br>
